@@ -1,0 +1,12 @@
+# 参考: org/springframework/boot/spring-boot-autoconfigure/2.0.5.RELEASE/spring-boot-autoconfigure-2.0.5.RELEASE-sources.jar!/META-INF/spring.factories
+
+# idea中可以双击shift查找,右上角勾上include non-project items,搜索查看spring.factories内容
+
+# 注意扫描格式配置: 同类型用逗号隔开,由于全限定名比较长,可以通过斜杠-->'\'区分便于阅读,斜杠代表换行
+
+
+
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.exclude.factory.FactoryConfigurationOne,\
+com.exclude.factory.FactoryConfigurationTwo
