@@ -1,4 +1,4 @@
-package com.xlasers.spring.servlet;
+package com.xlaser4j.mvc.servlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import cn.hutool.core.util.ReflectUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.xlasers.spring.annotation.XController;
-import com.xlasers.spring.annotation.XRequestMapping;
+import com.xlaser4j.mvc.annotation.XController;
+import com.xlaser4j.mvc.annotation.XRequestMapping;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,11 +30,11 @@ import static cn.hutool.core.util.StrUtil.replace;
 /**
  * The type X dispatcher servlet.
  *
- * @package: com.Xlasers.spring.servlet
+ * @package: com.xlaser4j.spring.servlet
  * @author: Elijah.D
- * @time: CreateAt 2018/9/18 && 20:25
+ * @time: 2018/9/18 20:25
  * @description: Dispatcher中央处理器
- * @copyright: Copyright © 2018 Xlasers
+ * @copyright: Copyright(c) 2018
  * @version: V1.0
  * @modified: Elijah.D
  */

@@ -1,15 +1,15 @@
-package com.xlasers.spring.annotation;
+package com.xlaser4j.mvc.annotation;
 
 import java.lang.annotation.*;
 
 /**
  * The interface X request mapping.
  *
- * @package: com.xlasers.spring.annotation
+ * @package: com.xlaser4j.spring.annotation
  * @author: Elijah.D
- * @time: CreateAt 2018/9/19 && 10:04
+ * @time: 2018/9/19 10:04
  * @description: 自定义RequestMapping访问路径映射
- * @copyright: Copyright © 2018 xlasers
+ * @copyright: Copyright(c) 2018
  * @version: V1.0
  * @modified: Elijah.D
  */

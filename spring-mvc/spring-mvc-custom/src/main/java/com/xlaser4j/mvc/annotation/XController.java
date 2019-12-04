@@ -1,15 +1,15 @@
-package com.xlasers.spring.annotation;
+package com.xlaser4j.mvc.annotation;
 
 import java.lang.annotation.*;
 
 /**
  * The interface X controller.
  *
- * @package: com.xlasers.spring.annotation
+ * @package: com.xlaser4j.spring.annotation
  * @author: Elijah.D
- * @time: CreateAt 2018/9/19 && 10:02
+ * @time: 2018/9/19 10:02
  * @description: 自定义controller注解
- * @copyright: Copyright © 2018 xlasers
+ * @copyright: Copyright(c) 2018
  * @version: V1.0
  * @modified: Elijah.D
  */
