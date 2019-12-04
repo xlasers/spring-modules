@@ -4,21 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xlasers</groupId>
-    <artifactId>spring-modules</artifactId>
+    <groupId>com.xlaser4j</groupId>
+    <artifactId>spring-all-demos</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <inceptionYear>2018</inceptionYear>
 
     <modules>
-        <module>spring-mvc</module>
-        <module>spring-mvc2</module>
-        <module>spring-mvc3</module>
         <module>spring-boot</module>
-        <module>spring-boot2</module>
-        <module>spring-boot3</module>
-        <module>spring-boot4</module>
-        <module>spring-boot5</module>
+        <module>spring-mvc</module>
+        <module>spring-cloud</module>
     </modules>
 
     <!--
