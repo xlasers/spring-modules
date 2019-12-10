@@ -14,6 +14,7 @@
         <module>spring-boot</module>
         <module>spring-mvc</module>
         <module>spring-cloud</module>
+        <module>spring-boot/spring-boot-jdbctemplate</module>
     </modules>
 
     <!--
@@ -264,6 +265,13 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!--boot-jdbc-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
 
