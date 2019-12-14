@@ -11,16 +11,7 @@
     <inceptionYear>2018</inceptionYear>
 
     <modules>
-        <!--boot-->
         <module>spring-boot</module>
-        <module>spring-boot/spring-boot-autoconfigure</module>
-        <module>spring-boot/spring-boot-banner</module>
-        <module>spring-boot/spring-boot-jdbctemplate</module>
-        <module>spring-boot/spring-boot-jpa</module>
-        <module>spring-boot/spring-boot-props</module>
-        <module>spring-boot/spring-boot-runner</module>
-        <module>spring-boot/spring-boot-webcontainer</module>
-        <!--boot-->
         <module>spring-cloud</module>
         <module>spring-mvc</module>
     </modules>
