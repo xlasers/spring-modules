@@ -1,0 +1,18 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /yml
+prefix:
+  name: xlaser4j
+  child:
+    - xlaser4j_1
+    - xlaser4j_2
+    - xlaser4j_3
+    - xlaser4j_4
+  employees:
+    - name: Linus Torvalds
+      age: 88
+    - name: Martin Flower
+      age: 87
+    - name: Kent Beck
+      age: 86
