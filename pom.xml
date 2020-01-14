@@ -42,7 +42,7 @@
         <jstl.version>1.2</jstl.version>
         <hibernate.version>5.2.17.Final</hibernate.version>
         <spring.version>5.0.9.RELEASE</spring.version>
-        <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <spring-boot-starter-data-redis.version>1.4.2.RELEASE
         </spring-boot-starter-data-redis.version>
         <velocity.version>1.6.3</velocity.version>
