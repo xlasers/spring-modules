@@ -20,6 +20,7 @@
         <module>spring-boot-props</module>
         <module>spring-boot-webcontainer</module>
         <module>spring-boot-yml</module>
+        <module>spring-boot-controlleradvice</module>
     </modules>
 
 
