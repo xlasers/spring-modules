@@ -3,33 +3,32 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-all-demos</artifactId>
+        <artifactId>spring-boot-json</artifactId>
         <groupId>com.xlaser4j</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring-boot-aop</module>
-        <module>spring-boot-autoconfigure</module>
-        <module>spring-boot-banner</module>
-        <module>spring-boot-jpa</module>
-        <module>spring-boot-mybatis</module>
-        <module>spring-boot-props</module>
-        <module>spring-boot-webcontainer</module>
-        <module>spring-boot-yml</module>
-        <module>spring-boot-controlleradvice</module>
-        <module>spring-boot-json</module>
-    </modules>
-
+    <artifactId>gson</artifactId>
 
     <dependencies>
         <!--suppress MavenDuplicateDependenciesInspection -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-json</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
+
+
 </project>
