@@ -22,6 +22,7 @@
         <module>spring-boot-yml</module>
         <module>spring-boot-controlleradvice</module>
         <module>spring-boot-json</module>
+        <module>spring-boot-static</module>
     </modules>
 
 
