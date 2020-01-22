@@ -253,6 +253,13 @@
                 <version>${velocity.version}</version>
             </dependency>
 
+            <!--thymeleaf-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
             <!--boot-aop-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
