@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Cors</title>
+    <script src="jquery3.3.1.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<input onclick="testGetByAnnotation()" type="button" value="GET-BY-ANNOTATION">
+<input onclick="testGetByConfig()" type="button" value="GET-BY-CONFIG">
+<input onclick="testPutByAnnotation()" type="button" value="PUT-BY-ANNOTATION">
+<input onclick="testPutByConfig()" type="button" value="PUT-BY-CONFIG">
+<script>
+    function testGetByAnnotation() {
+        $.get('http://localhost:8080/annotation/get', function (msg) {
+            $("#app").html(msg);
+        });
+    }
+    function testGetByConfig() {
+        $.get('http://localhost:8080/config/get', function (msg) {
+            $("#app").html(msg);
+        });
+    }
+    function testPutByAnnotation() {
+        $.ajax({
+            type: 'put',
+            url: 'http://localhost:8080/annotation/put',
+            success: function (msg) {
+                $("#app").html(msg);
+            }
+        })
+    }
+    function testPutByConfig() {
+        $.ajax({
+            type: 'put',
+            url: 'http://localhost:8080/config/put',
+            success: function (msg) {
+                $("#app").html(msg);
+            }
+        })
+    }
+</script>
+</body>
+</html>

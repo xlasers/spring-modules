@@ -26,6 +26,7 @@
         <module>spring-boot-multipartfile</module>
         <module>spring-boot-exception</module>
         <module>spring-boot-interceptor</module>
+        <module>spring-boot-cors</module>
     </modules>
 
 
