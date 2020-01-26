@@ -31,6 +31,7 @@
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-convert</module>
         <module>spring-boot-welcome</module>
+        <module>spring-boot-xml</module>
     </modules>
 
 
