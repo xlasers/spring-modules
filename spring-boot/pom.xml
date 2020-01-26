@@ -30,6 +30,7 @@
         <module>spring-boot-servlet</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-convert</module>
+        <module>spring-boot-welcome</module>
     </modules>
 
 
