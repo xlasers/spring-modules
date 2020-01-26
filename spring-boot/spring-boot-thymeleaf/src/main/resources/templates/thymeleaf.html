@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Thymeleaf Template</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    <tr th:each="person :${persons}">
+        <td th:text="${person.id}"></td>
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.age}"></td>
+    </tr>
+</table>
+</body>
+</html>
