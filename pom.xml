@@ -3,12 +3,17 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.xlaser4j</groupId>
     <artifactId>spring-all-demos</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <inceptionYear>2018</inceptionYear>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
 
     <modules>
         <module>spring-boot</module>
@@ -16,269 +21,26 @@
         <module>spring-mvc</module>
     </modules>
 
-    <!--
-        注意jar包版本问题:
-           1.spring版本要一致性
-           2.springboot版本要注意,内置的其他spring相关jar包会被单独声明的jar覆盖掉!!!
-           3.其他相关springboot内置的相关jar包,也会被单独声明的jar覆盖掉,而引起兼容问题,如hibernate,mysql等
-           4.dependencyManagement管理jar时必须考虑jar覆盖导致版本不一致问题!
-    -->
-    <properties>
+       <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-        <springfox-swagger.version>2.8.0</springfox-swagger.version>
-        <mybatis.version>3.4.6</mybatis.version>
-        <aspectjrt.version>1.8.9</aspectjrt.version>
-        <mybatis-spring.version>1.3.1</mybatis-spring.version>
-        <druid.version>1.0.27</druid.version>
-        <HikariCP.version>2.7.2</HikariCP.version>
         <hutool-all.version>4.0.12</hutool-all.version>
         <guava.version>25.0-jre</guava.version>
-        <modelmapper.version>1.1.0</modelmapper.version>
         <lombok.version>1.18.0</lombok.version>
-        <fastjson.version>1.2.31</fastjson.version>
-        <mybaitsplus.version>3.0.1</mybaitsplus.version>
-        <fileupload.version>1.3.1</fileupload.version>
-        <jstl.version>1.2</jstl.version>
-        <hibernate.version>5.2.17.Final</hibernate.version>
-        <spring.version>5.0.9.RELEASE</spring.version>
-        <spring-boot.version>2.0.5.RELEASE</spring-boot.version>
-        <spring-boot-starter-data-redis.version>1.4.2.RELEASE
-        </spring-boot-starter-data-redis.version>
-        <velocity.version>1.6.3</velocity.version>
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
         <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
-        <mybatis-plus-boot-starter.version>3.0.1</mybatis-plus-boot-starter.version>
-        <spring-boot-starter-undertow.version>2.1.6.RELEASE</spring-boot-starter-undertow.version>
-        <spring-data.version>2.0.9.RELEASE</spring-data.version>
-        <h2.version>1.4.190</h2.version>
-        <sping-test-junit5.version>1.0.2</sping-test-junit5.version>
-        <compiler.version>3.0</compiler.version>
-        <jacoco.version>0.7.2.201409121644</jacoco.version>
-        <commons-dbcp.version>1.4</commons-dbcp.version>
-        <camel.version>2.16.1</camel.version>
         <guava.version>19.0</guava.version>
-        <mockito.version>1.10.19</mockito.version>
-        <apache-httpcomponents.version>4.5.2</apache-httpcomponents.version>
-        <htmlunit.version>2.22</htmlunit.version>
-        <guice.version>4.0</guice.version>
-        <mongo-java-driver.version>3.3.0</mongo-java-driver.version>
-        <aws-lambda-core.version>1.1.0</aws-lambda-core.version>
-        <aws-java-sdk-dynamodb.version>1.11.289</aws-java-sdk-dynamodb.version>
-        <aws-lambda-log4j.version>1.0.0</aws-lambda-log4j.version>
-        <aws-lambda-java-events.version>2.0.1</aws-lambda-java-events.version>
-        <jackson.version>2.8.5</jackson.version>
-        <dom4j.version>1.6.1</dom4j.version>
         <mysql-connector-java.version>5.1.29</mysql-connector-java.version>
-        <jackson.version>2.9.5</jackson.version>
-        <junit.version>4.12</junit.version>
-        <junit-jupiter.version>5.0.2</junit-jupiter.version>
-        <junit-vintage.version>4.12.2</junit-vintage.version>
-        <junit-platform.version>1.0.2</junit-platform.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-
-            <!--servlet-->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax.servlet-api.version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <!--swagger2-->
-            <!--自动生成描述API的json文件-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox-swagger.version}</version>
-            </dependency>
-
-            <!--将json文件解析出来，用一种更友好的方式呈现出来。-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox-swagger.version}</version>
-            </dependency>
-
-
-            <!-- 读取xml文件 -->
-            <dependency>
-                <groupId>dom4j</groupId>
-                <artifactId>dom4j</artifactId>
-                <version>${dom4j.version}</version>
-            </dependency>
-
             <!-- MySQL,此处会覆盖spring-boot提供的mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
-            </dependency>
-
-            <!-- druid连接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-
-            <!--hikari连接池-->
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${HikariCP.version}</version>
-            </dependency>
-
-            <!--mybatis-->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-
-            <!-- Mybatis-Plus -->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
-                <version>${mybaitsplus.version}</version>
-            </dependency>
-
-            <!--spring-jdbc -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!--spring-mybatis-->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring.version}</version>
-            </dependency>
-
-            <!-- Spring事务 -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!-- Spring AOP -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>${aspectjrt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectjrt.version}</version>
-            </dependency>
-
-            <!--spring-webmvc-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!--spring-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-expression</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!--spring-jpa-->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>${spring-data.version}</version>
-            </dependency>
-
-
-            <!--spring-boot-->
-            <!--父pom-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!--注意版本兼容性,低版本boot需要velocity的jar-->
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity</artifactId>
-                <version>${velocity.version}</version>
-            </dependency>
-
-            <!--thymeleaf-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <!--boot-aop-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-aop</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <!--boot-web-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <!--boot-jdbc-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>${spring-boot.version}</version>
             </dependency>
 
             <!--druid-boot-->
@@ -295,88 +57,6 @@
                 <version>${mybatis-spring-boot.version}</version>
             </dependency>
 
-            <!--mybatis-plus-boot-->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus-boot-starter.version}</version>
-            </dependency>
-
-            <!--redis-boot-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
-                <version>${spring-boot-starter-data-redis.version}</version>
-            </dependency>
-
-            <!--undertow-boot-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-undertow</artifactId>
-                <version>${spring-boot-starter-undertow.version}</version>
-            </dependency>
-
-            <!-- Jackson Json处理工具包 -->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-
-
-            <!-- FileUpload -->
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>${fileupload.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${jstl.version}</version>
-            </dependency>
-
-
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${apache-httpcomponents.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>${h2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-dbcp</groupId>
-                <artifactId>commons-dbcp</artifactId>
-                <version>${commons-dbcp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-core</artifactId>
-                <version>${camel.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-stream</artifactId>
-                <version>${camel.version}</version>
-            </dependency>
-
-
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
@@ -387,113 +67,10 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.modelmapper</groupId>
-                <artifactId>modelmapper</artifactId>
-                <version>${modelmapper.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-core</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-
-            <!--mock测试-->
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>net.sourceforge.htmlunit</groupId>
-                <artifactId>htmlunit</artifactId>
-                <version>${htmlunit.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mongodb</groupId>
-                <artifactId>mongo-java-driver</artifactId>
-                <version>${mongo-java-driver.version}</version>
-            </dependency>
-
-            <!--junit5测试-->
-            <!--jupiter-api编写测试代码的api-->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!--spring-test-->
-            <dependency>
-                <groupId>com.github.sbrannen</groupId>
-                <artifactId>spring-test-junit5</artifactId>
-                <version>${sping-test-junit5.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!--spring-test-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!--jupiter-engine运行测试代码的引擎-->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-params</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-migrationsupport</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.vintage</groupId>
-                <artifactId>junit-vintage-engine</artifactId>
-                <version>${junit-vintage.version}</version>
-                <scope>test</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
