@@ -15,23 +15,26 @@
         <module>spring-boot-aop</module>
         <module>spring-boot-autoconfigure</module>
         <module>spring-boot-banner</module>
-        <module>spring-boot-jpa</module>
-        <module>spring-boot-mybatis</module>
-        <module>spring-boot-props</module>
-        <module>spring-boot-webcontainer</module>
-        <module>spring-boot-yml</module>
         <module>spring-boot-controlleradvice</module>
-        <module>spring-boot-json</module>
-        <module>spring-boot-static</module>
-        <module>spring-boot-multipartfile</module>
+        <module>spring-boot-convert</module>
+        <module>spring-boot-cors</module>
         <module>spring-boot-exception</module>
         <module>spring-boot-interceptor</module>
-        <module>spring-boot-cors</module>
+        <module>spring-boot-jdbctemplate</module>
+        <module>spring-boot-jpa</module>
+        <module>spring-boot-json</module>
+        <module>spring-boot-mongo</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-multipartfile</module>
+        <module>spring-boot-props</module>
+        <module>spring-boot-runner</module>
         <module>spring-boot-servlet</module>
+        <module>spring-boot-static</module>
         <module>spring-boot-thymeleaf</module>
-        <module>spring-boot-convert</module>
+        <module>spring-boot-webcontainer</module>
         <module>spring-boot-welcome</module>
         <module>spring-boot-xml</module>
+        <module>spring-boot-yml</module>
     </modules>
 
 
