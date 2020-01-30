@@ -30,6 +30,7 @@
         <module>spring-boot-redis</module>
         <module>spring-boot-runner</module>
         <module>spring-boot-servlet</module>
+        <module>spring-boot-session</module>
         <module>spring-boot-static</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-webcontainer</module>
