@@ -1,4 +1,4 @@
-package com.xlaser4j.jpa.config;
+package com.xlaser4j.demo.config;
 
 import javax.sql.DataSource;
 
@@ -9,12 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * @package: com.xlaser4j.jpa.config
+ * @package: com.xlaser4j.demo.config
  * @author: Elijah.D
  * @time: 2019/12/18 14:19
  * @description: 配置多数据源
- * @copyright: Copyright(c) 2019
- * @version: V1.0
  * @modified: Elijah.D
  */
 @Configuration

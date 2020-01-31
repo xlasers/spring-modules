@@ -1,4 +1,4 @@
-package com.xlaser4j.jpa.config;
+package com.xlaser4j.demo.config;
 
 import java.util.Objects;
 
@@ -16,16 +16,14 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
- * @package: com.xlaser4j.jpa.config
+ * @package: com.xlaser4j.demo.config
  * @author: Elijah.D
  * @time: 2019/12/18 17:22
  * @description:
- * @copyright: Copyright(c) 2019
- * @version: V1.0
  * @modified: Elijah.D
  */
 @Configuration
-@EnableJpaRepositories(basePackages = "com.xlaser4j.jpa.dao.write", entityManagerFactoryRef = "localContainerEntityManagerFactoryBeanOfWrite", transactionManagerRef = "platformTransactionManagerOfWrite")
+@EnableJpaRepositories(basePackages = "com.xlaser4j.demo.repository.write", entityManagerFactoryRef = "localContainerEntityManagerFactoryBeanOfWrite", transactionManagerRef = "platformTransactionManagerOfWrite")
 public class JpaWriteConfig {
     @Autowired
     JpaProperties prop;
@@ -56,7 +54,7 @@ public class JpaWriteConfig {
         return builder.dataSource(writeDataSource)
                 .properties(prop.getProperties())
                 .persistenceUnit("write")
-                .packages("com.xlaser4j.jpa.entity")
+                .packages("com.xlaser4j.demo.entity")
                 .build();
     }
 }

@@ -11,10 +11,11 @@ spring:
       url: jdbc:mysql://localhost:3306/test
       username: root
   jpa:
+    show-sql: true
+    database: mysql
+    database-platform: mysql
+    hibernate:
+      ddl-auto: update
     properties:
-      database: mysql
-      database-platform: mysql
       hibernate:
-        ddl-auto: update
         dialect: org.hibernate.dialect.MySQL57Dialect
-      show-sql: true

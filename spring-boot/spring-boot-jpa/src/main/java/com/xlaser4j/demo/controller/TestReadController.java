@@ -1,11 +1,11 @@
-package com.xlaser4j.jpa.controller;
+package com.xlaser4j.demo.controller;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import com.xlaser4j.jpa.dao.read.StudentReadRepository;
-import com.xlaser4j.jpa.entity.StudentEntity;
+import com.xlaser4j.demo.entity.StudentEntity;
+import com.xlaser4j.demo.repository.read.StudentReadRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,8 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author: Elijah.D
  * @time: 2018/10/6 15:00
  * @description: controller测试
- * @copyright: Copyright(c) 2018
- * @version: V1.0
  * @modified: Elijah.D
  */
 @Slf4j

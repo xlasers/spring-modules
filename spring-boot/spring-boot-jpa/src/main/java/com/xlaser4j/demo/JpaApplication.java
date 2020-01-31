@@ -1,15 +1,13 @@
-package com.xlaser4j.jpa;
+package com.xlaser4j.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @package: com.xlaser4j.jpa
+ * @package: com.xlaser4j.demo
  * @author: Elijah.D
  * @time: 2018/10/6 13:59
  * @description: app主类
- * @copyright: Copyright(c) 2018
- * @version: V1.0
  * @modified: Elijah.D
  */
 @SpringBootApplication

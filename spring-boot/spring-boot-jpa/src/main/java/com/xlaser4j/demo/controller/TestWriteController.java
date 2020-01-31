@@ -1,6 +1,6 @@
-package com.xlaser4j.jpa.controller;
+package com.xlaser4j.demo.controller;
 
-import com.xlaser4j.jpa.dao.write.StudentWriteRepository;
+import com.xlaser4j.demo.repository.write.StudentWriteRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author: Elijah.D
  * @time: 2018/10/6 15:00
  * @description: controller测试
- * @copyright: Copyright(c) 2018
- * @version: V1.0
  * @modified: Elijah.D
  */
 @Slf4j

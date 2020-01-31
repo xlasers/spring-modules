@@ -1,8 +1,8 @@
-package com.xlaser4j.jpa.dao.write;
+package com.xlaser4j.demo.repository.write;
 
 import javax.transaction.Transactional;
 
-import com.xlaser4j.jpa.entity.StudentEntity;
+import com.xlaser4j.demo.entity.StudentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,12 +10,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 /**
- * @package: com.xlaser4j.jpa.dao.read
+ * @package: com.xlaser4j.demo.dao.read
  * @author: Elijah.D
  * @time: 2019/12/18 22:52
  * @description:
- * @copyright: Copyright(c) 2019
- * @version: V1.0
  * @modified: Elijah.D
  */
 public interface StudentWriteRepository extends JpaRepository<StudentEntity, Long>, JpaSpecificationExecutor<StudentEntity> {
@@ -24,9 +22,10 @@ public interface StudentWriteRepository extends JpaRepository<StudentEntity, Lon
      *
      * @param name
      * @param id
+     * @return
      */
     @Modifying
-    @Transactional
+    @Transactional(rollbackOn = Exception.class)
     @Query(value = "UPDATE student SET NAME = :name WHERE ID = :id", nativeQuery = true)
     Integer updateNameById(@Param("name") String name, @Param("id") Long id);
 
@@ -39,7 +38,7 @@ public interface StudentWriteRepository extends JpaRepository<StudentEntity, Lon
      */
     @Query(value = "INSERT INTO student(name,age) VALUES(?1,?2)", nativeQuery = true)
     @Modifying
-    @Transactional
+    @Transactional(rollbackOn = Exception.class)
     Integer saveStudent(String name, Integer age);
 
     /**
@@ -49,7 +48,7 @@ public interface StudentWriteRepository extends JpaRepository<StudentEntity, Lon
      * @param age
      */
     @Modifying
-    @Transactional
+    @Transactional(rollbackOn = Exception.class)
     @Query(value = "DELETE FROM student WHERE name = ?1 AND age = ?2", nativeQuery = true)
     void deleteByNameAndAge(String name, int age);
 }
