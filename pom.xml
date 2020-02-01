@@ -21,36 +21,33 @@
         <module>spring-mvc</module>
     </modules>
 
-       <properties>
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hutool-all.version>4.0.12</hutool-all.version>
-        <guava.version>25.0-jre</guava.version>
-        <lombok.version>1.18.0</lombok.version>
+        <mysql-connector-java.version>5.1.29</mysql-connector-java.version>
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
         <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
-        <guava.version>19.0</guava.version>
-        <mysql-connector-java.version>5.1.29</mysql-connector-java.version>
+        <hutool-all.version>4.0.12</hutool-all.version>
+        <guava.version>25.0-jre</guava.version>
+        <ehcache.version>2.10.6</ehcache.version>
+        <lombok.version>1.18.0</lombok.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- MySQL,此处会覆盖spring-boot提供的mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
 
-            <!--druid-boot-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
 
-            <!--mybatis-boot-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -62,10 +59,17 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

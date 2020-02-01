@@ -15,6 +15,7 @@
         <module>spring-boot-aop</module>
         <module>spring-boot-autoconfigure</module>
         <module>spring-boot-banner</module>
+        <module>spring-boot-cache</module>
         <module>spring-boot-controlleradvice</module>
         <module>spring-boot-convert</module>
         <module>spring-boot-cors</module>
