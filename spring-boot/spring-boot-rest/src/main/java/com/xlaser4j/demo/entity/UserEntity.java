@@ -1,5 +1,7 @@
 package com.xlaser4j.demo.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +20,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity(name = "user")
 @NoArgsConstructor
-public class UserEntity {
+public class UserEntity implements Serializable {
+    private static final long serialVersionUID = -7395878524665212384L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

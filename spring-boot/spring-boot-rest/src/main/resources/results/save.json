@@ -1,0 +1,12 @@
+{
+  "name": "Martin",
+  "age": 30,
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/api/v1/users/4"
+    },
+    "userEntity": {
+      "href": "http://localhost:8080/api/v1/users/4"
+    }
+  }
+}

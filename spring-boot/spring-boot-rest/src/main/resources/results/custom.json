@@ -1,0 +1,23 @@
+{
+  "_embedded": {
+    "userEntities": [
+      {
+        "name": "Linus",
+        "age": 30,
+        "_links": {
+          "self": {
+            "href": "http://localhost:8080/api/v1/users/5"
+          },
+          "userEntity": {
+            "href": "http://localhost:8080/api/v1/users/5"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/api/v1/users/search/query?prefix=L"
+    }
+  }
+}
