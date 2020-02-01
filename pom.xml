@@ -27,7 +27,7 @@
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
         <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
         <hutool-all.version>4.0.12</hutool-all.version>
-        <guava.version>25.0-jre</guava.version>
+        <guava.version>28.2-jre</guava.version>
         <ehcache.version>2.10.6</ehcache.version>
         <lombok.version>1.18.0</lombok.version>
         <slf4j.version>1.7.21</slf4j.version>
