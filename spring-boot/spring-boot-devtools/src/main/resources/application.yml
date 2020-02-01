@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    restart:
+      additional-paths: src/main/resources/static
+      trigger-file: .trigger-file
+      # 是否开启,同时启动类中通过系统参数设置:System.setProperty("spring.devtools.restart.enabled", "false");
+      enabled: true
+    # 配合浏览器liveReload插件使用,可以直接自动刷新静态资源,不需要额外配置静态资源路径
+    livereload:
+      enabled: true
+

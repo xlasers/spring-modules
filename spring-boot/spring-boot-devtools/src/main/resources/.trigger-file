@@ -1,0 +1,5 @@
+1.application.yml中配置trigger-file
+
+2.项目中的restart资源做出变更
+
+3.手动改动此文件,eg:随意在.trigger-file中添加删除即可触发热部署重启
