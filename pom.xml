@@ -26,7 +26,7 @@
         <mysql-connector-java.version>5.1.29</mysql-connector-java.version>
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
         <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
-        <hutool-all.version>4.0.12</hutool-all.version>
+        <hutool-all.version>4.1.12</hutool-all.version>
         <guava.version>25.0-jre</guava.version>
         <ehcache.version>2.10.6</ehcache.version>
         <lombok.version>1.18.0</lombok.version>
