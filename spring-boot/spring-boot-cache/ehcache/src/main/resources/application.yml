@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test
+  jpa:
+    show-sql: true
+    database: mysql
+    database-platform: mysql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        # hibernate.LazyInitializationException: could not initialize proxy [..] - no Session
+        # 懒加载机制发生如上异常,添加如下配置,在没有事务的使用懒加载,或者去掉配置,在实体类上加上注解:@Proxy(lazy = false)
+        # enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  # 默认config文件名是ehcache.xml,如果配置名需要变更则需要添加如下config配置
+  cache:
+    ehcache:
+      config: classpath:/ehcache-config.xml
+
