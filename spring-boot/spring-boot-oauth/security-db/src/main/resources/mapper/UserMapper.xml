@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xlaser4j.demo.mapper.UserMapper">
+    <resultMap id="resultMap" type="com.xlaser4j.demo.entity.User">
+        <id column="id" property="id"/>
+        <result column="is_expired" property="expired"/>
+        <result column="is_locked" property="locked"/>
+        <result column="is_enabled" property="enabled"/>
+    </resultMap>
+
+    <select id="getUserByName" resultMap="resultMap">
+        SELECT * FROM user WHERE username = #{name}
+    </select>
+
+    <select id="listRolesByUserId" resultType="com.xlaser4j.demo.entity.Role">
+        SELECT * FROM role WHERE id in (SELECT r_id FROM user_role WHERE u_id = ${uId})
+    </select>
+</mapper>
