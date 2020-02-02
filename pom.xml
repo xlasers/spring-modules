@@ -25,8 +25,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mysql-connector-java.version>5.1.29</mysql-connector-java.version>
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
-        <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
-        <hutool-all.version>4.0.12</hutool-all.version>
+        <mybatis-spring-boot.version>2.1.0</mybatis-spring-boot.version>
+        <spring-security-oauth2.version>2.3.6.RELEASE</spring-security-oauth2.version>
+        <hutool-all.version>5.1.0</hutool-all.version>
         <guava.version>25.0-jre</guava.version>
         <ehcache.version>2.10.6</ehcache.version>
         <lombok.version>1.18.0</lombok.version>
@@ -52,6 +53,12 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring-security-oauth2.version}</version>
             </dependency>
 
             <dependency>
