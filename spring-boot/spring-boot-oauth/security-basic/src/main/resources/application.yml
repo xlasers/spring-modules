@@ -1,0 +1,2 @@
+# application中可以配置security默认登陆用户名及密码,也可以通过config配置
+# spring.security.user.name = admin
