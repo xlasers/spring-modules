@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlaser4j.demo.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlaser4j.demo.entity.Menu">
+        <id column="id" property="id"/>
+        <result column="pattern" property="pattern"/>
+        <collection property="roles" ofType="com.xlaser4j.demo.entity.Role">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="desc" property="desc"/>
+        </collection>
+    </resultMap>
+
+    <select id="listMenus" resultMap="BaseResultMap">
+        <!--SELECT m.*, r.id role_id, r.name role_name, r.desc role_desc-->
+        SELECT m.*, r.*
+        FROM menu m, role r, menu_role mr
+        WHERE m.id = mr.m_id
+        AND r.id = mr.r_id
+    </select>
+</mapper>
