@@ -3,26 +3,22 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-boot</artifactId>
+        <artifactId>spring-boot-oauth</artifactId>
         <groupId>com.xlaser4j</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-oauth</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>security-basic</module>
-        <module>security-db</module>
-        <module>security-json</module>
-        <module>security-oauth2</module>
-        <module>security-rbac</module>
-    </modules>
+    <artifactId>security-oauth2</artifactId>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 
