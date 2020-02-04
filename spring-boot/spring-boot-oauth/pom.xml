@@ -14,6 +14,7 @@
     <modules>
         <module>security-basic</module>
         <module>security-db</module>
+        <module>security-json</module>
         <module>security-rbac</module>
     </modules>
 
