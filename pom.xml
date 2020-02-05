@@ -30,6 +30,9 @@
         <hutool-all.version>5.1.0</hutool-all.version>
         <guava.version>25.0-jre</guava.version>
         <ehcache.version>2.10.6</ehcache.version>
+        <sockjs-client.version>1.1.2</sockjs-client.version>
+        <jquery.version>3.4.1</jquery.version>
+        <stomp-websocket.version>2.3.3</stomp-websocket.version>
         <lombok.version>1.18.0</lombok.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>
@@ -37,46 +40,68 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--jdbc驱动-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
 
+            <!--连接池db-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
 
+            <!--持久层mybatis-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot.version}</version>
             </dependency>
 
+            <!--认证oauth2-->
             <dependency>
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${spring-security-oauth2.version}</version>
             </dependency>
 
+            <!--工具类Tools-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
 
+            <!--ehcache缓存-->
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
+            </dependency>
+
+            <!--通过maven管理前端js依赖:websocket-->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>sockjs-client</artifactId>
+                <version>${sockjs-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>jquery</artifactId>
+                <version>${jquery.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>stomp-websocket</artifactId>
+                <version>${stomp-websocket.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
