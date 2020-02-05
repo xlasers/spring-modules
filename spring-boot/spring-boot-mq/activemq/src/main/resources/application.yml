@@ -1,0 +1,8 @@
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    packages:
+      # 默认是字符串,true是允许传输对象,否则抛出异常,同时对象必须实现序列化接口
+      trust-all: true
+    user: admin
+    password: admin

@@ -26,6 +26,7 @@
         <module>spring-boot-jpa</module>
         <module>spring-boot-json</module>
         <module>spring-boot-mongo</module>
+        <module>spring-boot-mq</module>
         <module>spring-boot-multipartfile</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-oauth</module>
