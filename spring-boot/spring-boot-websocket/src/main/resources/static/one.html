@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One Chat</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+</head>
+<body>
+<input id="connect" type="button" value="连接">
+<input disabled="disabled" id="disconnect" type="button" value="断开连接">
+<br>
+<br>
+<p>-----------------------------------------------------------------------------------------</p>
+<br>
+<br>
+<div id="chatRoom" style="display: none">
+    <table>
+        <tr>
+            <td>msg： <label for="payload"></label><input id="payload" type="text"></td>
+            <td>to： <label for="to"></label><input id="to" type="text"></td>
+            <td><input id="send" type="button" value="发送"></td>
+        </tr>
+    </table>
+    <div id="conversation"></div>
+</div>
+<script>
+    let stompClient;
+    $(function () {
+        $("#connect").click(function () {
+            connect();
+        });
+        $("#disconnect").click(function () {
+            if (stompClient != null) {
+                stompClient.disconnect();
+            }
+            showPage(false);
+        });
+        // 发送逻辑
+        $("#send").click(function () {
+            stompClient.send('/app/point', {}, JSON.stringify({
+                'to': $("#to").val(),
+                'payload': $("#payload").val()
+            }))
+        })
+    });
+    stompClient = null;
+    function connect() {
+        // 通过config中定义的endpoint建立链接
+        const socket = new SockJS('/chat');
+        stompClient = Stomp.over(socket);
+        // 订阅服务端topic,解析收到的msg展示到div
+        stompClient.connect({}, function () {
+            showPage(true);
+            // 点对点会默认加前缀/user,因此订阅路径中需要额外添加/user
+            stompClient.subscribe('/user/queue/one', function (msg) {
+                displayMsg(JSON.parse(msg.body));
+            });
+        })
+    }
+    // 展示收到的msg
+    function displayMsg(msg) {
+        $("#conversation").append('<div>' + msg.from + ': ' + msg.payload + '</div>');
+    }
+    // 根据连接状态控制聊天页面是否展示等
+    function showPage(flag) {
+        $("#connect").prop("disabled", flag);
+        $("#disconnect").prop("disabled", !flag);
+        if (flag) {
+            $("#chatRoom").show();
+        } else {
+            $("#chatRoom").hide();
+        }
+    }
+</script>
+</body>
+</html>
