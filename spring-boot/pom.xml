@@ -40,6 +40,7 @@
         <module>spring-boot-static</module>
         <module>spring-boot-test</module>
         <module>spring-boot-thymeleaf</module>
+        <module>spring-boot-timer</module>
         <module>spring-boot-webcontainer</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-welcome</module>
