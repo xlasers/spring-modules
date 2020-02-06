@@ -1,0 +1,17 @@
+spring:
+  mail:
+    host: smtp.qq.com
+    # smtp默认端口:465或587
+    port: 587
+    username: from-email@qq.com
+    # 邮件设置开启smtp获取授权码
+    password: lfpvbfmfadyzbajg
+    default-encoding: utf-8
+    properties:
+      mail:
+        # 控制台打印日志
+        debug: true
+        smtp:
+          # 传输加密
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
