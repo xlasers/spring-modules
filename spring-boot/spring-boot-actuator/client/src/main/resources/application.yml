@@ -1,0 +1,16 @@
+server:
+  port: 8088
+# 配置admin监控地址
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+# 配置endpoint,用于暴露给admin界面的信息
+management:
+  endpoints:
+    web:
+      exposure:
+        # 默认是health,info两个,这里配置成*(yml中需要加"",properties不需要),具体参考actuator模块
+        # * has a special meaning in YAML, so be sure to add quotes if you want to include (or exclude) all endpoints
+        include: "*"
