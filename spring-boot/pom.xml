@@ -12,6 +12,7 @@
     <artifactId>spring-boot</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>spring-boot-actuator</module>
         <module>spring-boot-aop</module>
         <module>spring-boot-autoconfigure</module>
         <module>spring-boot-banner</module>
