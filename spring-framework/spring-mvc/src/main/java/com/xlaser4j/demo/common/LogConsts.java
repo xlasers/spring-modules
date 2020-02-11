@@ -1,16 +1,12 @@
-package com.xlaser4j.mvc.common;
+package com.xlaser4j.demo.common;
 
 import lombok.experimental.UtilityClass;
 
 /**
- * The type Log consts.
- *
- * @package: com.xlaser4j.spring.common
+ * @package: com.xlaser4j.demo.common
  * @author: Elijah.D
  * @time: 2018/9/20 17:19
  * @description: 工具类常量池
- * @copyright: Copyright(c) 2018
- * @version: V1.0
  * @modified: Elijah.D
  */
 @UtilityClass

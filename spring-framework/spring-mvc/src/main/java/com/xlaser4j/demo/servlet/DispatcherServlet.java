@@ -1,4 +1,4 @@
-package com.xlaser4j.mvc.servlet;
+package com.xlaser4j.demo.servlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import cn.hutool.core.util.ReflectUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.xlaser4j.mvc.annotation.XController;
-import com.xlaser4j.mvc.annotation.XRequestMapping;
+import com.xlaser4j.demo.annotation.XController;
+import com.xlaser4j.demo.annotation.XRequestMapping;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,14 +28,10 @@ import static cn.hutool.core.util.StrUtil.lowerFirst;
 import static cn.hutool.core.util.StrUtil.replace;
 
 /**
- * The type X dispatcher servlet.
- *
- * @package: com.xlaser4j.spring.servlet
+ * @package: com.xlaser4j.demo.servlet
  * @author: Elijah.D
  * @time: 2018/9/18 20:25
  * @description: Dispatcher中央处理器
- * @copyright: Copyright(c) 2018
- * @version: V1.0
  * @modified: Elijah.D
  */
 @Slf4j
@@ -102,11 +98,9 @@ public class DispatcherServlet extends HttpServlet {
      * @param res
      */
     private void doDispatch(HttpServletRequest req, HttpServletResponse res) {
-
         if (handlerMappings.isEmpty()) {
             return;
         }
-
         String url = req.getRequestURI();
         String contextPath = req.getContextPath();
         url = replace(url, contextPath, "").replaceAll("/+", "/");
@@ -119,7 +113,6 @@ public class DispatcherServlet extends HttpServlet {
             }
             return;
         }
-
         Method method = handlerMappings.get(url);
 
         //获取方法参数类型列表
@@ -134,7 +127,6 @@ public class DispatcherServlet extends HttpServlet {
         //判断参数类型,参数值进行转换
         for (int i = 0; i < paramTypes.length; i++) {
             String requestType = paramTypes[i].getSimpleName();
-
             if ("String".equals(requestType)) {
                 for (Map.Entry<String, String[]> param : paramMap.entrySet()) {
                     String value = replaceAll(Arrays.toString(param.getValue()), "\\[|]", "").replaceAll(",\\s", ",");
@@ -142,16 +134,13 @@ public class DispatcherServlet extends HttpServlet {
                 }
                 continue;
             }
-
             if ("HttpServletRequest".equals(requestType)) {
                 paramValues[i] = req;
             }
-
             if ("HttpServletResponse".equals(requestType)) {
                 paramValues[i] = res;
             }
         }
-
         //传入对应的method,param反射调用
         try {
             method.invoke(controllers.get(url), paramValues);
@@ -166,7 +155,6 @@ public class DispatcherServlet extends HttpServlet {
      * @param location {@link ServletConfig#getInitParameter(String)}
      */
     private void loadConfig(String location) {
-
         try {
             @Cleanup InputStream stream = getClass().getClassLoader().getResourceAsStream(location);
             properties.load(stream);
@@ -180,17 +168,14 @@ public class DispatcherServlet extends HttpServlet {
      *
      * @param packageName
      */
+    @SuppressWarnings("ConstantConditions")
     private void scanClass(String packageName) {
         URL url = getClass().getClassLoader().getResource("/" + replaceAll(packageName, "\\.", "/"));
-
         File dir = new File(url.getFile());
-
         for (File file : dir.listFiles()) {
-
             if (file.isDirectory()) {
                 scanClass(packageName + "." + file.getName());
             }
-
             String className = packageName + "." + replace(file.getName(), ".class", "");
             classNames.add(className);
         }
@@ -200,11 +185,9 @@ public class DispatcherServlet extends HttpServlet {
      * 初始化ioc,实例化装载bean
      */
     private void initIoc() {
-
         if (classNames.isEmpty()) {
             return;
         }
-
         for (String className : classNames) {
             try {
                 Class<?> clazz = Class.forName(className);
@@ -212,7 +195,7 @@ public class DispatcherServlet extends HttpServlet {
                     ioc.put(lowerFirst(clazz.getSimpleName()), clazz.newInstance());
                 }
             } catch (Exception e) {
-                log.error("【dispatcherServlet】 反射异常,创建类实例失败 ! {}", e.getMessage());
+                log.error("【initIoc】 反射异常,创建类实例失败 ! {}", e.getMessage());
             }
         }
     }
@@ -221,31 +204,24 @@ public class DispatcherServlet extends HttpServlet {
      * 初始化handlerMapping,创建url && methods对应关系
      */
     private void initHandlerMapping() {
-
         if (ioc.isEmpty()) {
             return;
         }
-
         for (Map.Entry<String, Object> entry : ioc.entrySet()) {
-
             Class<?> clazz = entry.getValue().getClass();
             if (!clazz.isAnnotationPresent(XController.class)) {
                 return;
             }
-
             String controllerUrl = "";
             if (clazz.isAnnotationPresent(XRequestMapping.class)) {
                 XRequestMapping annotation = clazz.getAnnotation(XRequestMapping.class);
                 controllerUrl = annotation.value();
             }
-
             Method[] methods = ReflectUtil.getMethods(clazz);
             for (Method method : methods) {
                 if (method.isAnnotationPresent(XRequestMapping.class)) {
-
                     String methodUrl = method.getAnnotation(XRequestMapping.class).value();
                     handlerMappings.put(controllerUrl + methodUrl, method);
-
                     try {
                         controllers.put(controllerUrl + methodUrl, clazz.newInstance());
                     } catch (Exception e) {
