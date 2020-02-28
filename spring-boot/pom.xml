@@ -14,12 +14,10 @@
 
     <modules>
         <module>spring-boot-actuator</module>
-        <module>spring-boot-aop</module>
         <module>spring-boot-autoconfigure</module>
-        <module>spring-boot-banner</module>
+        <module>spring-boot-basic</module>
         <module>spring-boot-cache</module>
         <module>spring-boot-controlleradvice</module>
-        <module>spring-boot-convert</module>
         <module>spring-boot-cors</module>
         <module>spring-boot-devtools</module>
         <module>spring-boot-exception</module>
@@ -30,25 +28,17 @@
         <module>spring-boot-mail</module>
         <module>spring-boot-mongo</module>
         <module>spring-boot-mq</module>
-        <module>spring-boot-multipartfile</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-oauth</module>
-        <module>spring-boot-props</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-rest</module>
-        <module>spring-boot-runner</module>
         <module>spring-boot-servlet</module>
         <module>spring-boot-session</module>
-        <module>spring-boot-static</module>
         <module>spring-boot-test</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-timer</module>
-        <module>spring-boot-war</module>
-        <module>spring-boot-webcontainer</module>
         <module>spring-boot-websocket</module>
-        <module>spring-boot-welcome</module>
         <module>spring-boot-xml</module>
-        <module>spring-boot-yml</module>
     </modules>
 
 
