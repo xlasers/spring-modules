@@ -12,12 +12,13 @@
 ### DONE LIST
 - [spring-boot-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-boot)
   - spring-boot-actuator
-  - spring-boot-aop
+    - actuator | admin | client
   - spring-boot-autoconfigure
-  - spring-boot-banner
+  - spring-boot-basic
+    - aop | banner | convert | multipart-file | props | runner | static | war | web-container | welcome | yml 
   - spring-boot-cache
+    - ehcache | redis
   - spring-boot-controller-advice
-  - spring-boot-convert
   - spring-boot-cors
   - spring-boot-devtools
   - spring-boot-exception
@@ -25,28 +26,24 @@
   - spring-boot-jdbc-template
   - spring-boot-jpa
   - spring-boot-json
+    - fastjson | gson | jackson
   - spring-boot-mail
   - spring-boot-mongo
   - spring-boot-mq
-  - spring-boot-multipart-file
+    - activemq | rabbitmq | redismq
   - spring-boot-mybatis
   - spring-boot-oauth
-  - spring-boot-props
+    - security-basic | security-db | security-json | security-oauth2 | security-rbac 
   - spring-boot-redis
   - spring-boot-rest
-  - spring-boot-runner
   - spring-boot-servlet
   - spring-boot-session
-  - spring-boot-static
   - spring-boot-test
   - spring-boot-thymeleaf
   - spring-boot-timer
-  - spring-boot-war
-  - spring-boot-web-container
+    - quartz | schedule
   - spring-boot-websocket
-  - spring-boot-welcome
   - spring-boot-xml
-  - spring-boot-yml
   
   
   
@@ -61,7 +58,9 @@
 
 
 #### Reference
-* [javaboy](https://www.javaboy.org/)
+* [JavaBoy](https://www.javaboy.org/)
+* [JueJin](https://juejin.im/book/5afc2e5f6fb9a07a9b362527)
+* [SpringBoot](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-documentation)
 
          
          
