@@ -1,4 +1,4 @@
-package com.xlaser4j.demo.config;
+package com.xlaser4j.demo.basic.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @package: com.xlaser4j.demo.config
+ * @package: com.xlaser4j.demo.basic.config
  * @author: Elijah.D
  * @time: 2020/2/5 19:29
  * @description:
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("JavadocReference")
 @Configuration
 public class HeadersExchangeConfig {
-    public final static String EXCHANGE_NAME = "headers";
+    public static final String EXCHANGE_NAME = "headers";
 
     /**
      * Construct a new Exchange, given a name, durability flag, auto-delete flag.
@@ -28,7 +28,7 @@ public class HeadersExchangeConfig {
      * autoDelete true if the server should delete the exchange when it is no longer in use
      * {@link org.springframework.amqp.core.AbstractExchange#autoDelete}长时间未消费的消息,是否删除
      *
-     * @return
+     * @return exchange
      */
     @Bean
     HeadersExchange headersExchange() {
@@ -41,7 +41,7 @@ public class HeadersExchangeConfig {
      * headers模式下根据匹配规则,如果headers中包含key则路由到这个queue
      * {@link MessageBuilder#setHeader(String, Object)}
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue key() {
@@ -54,7 +54,7 @@ public class HeadersExchangeConfig {
      * headers模式下根据匹配规则,如果headers中包含key,且value相同,则路由到这个queue
      * {@link MessageBuilder#setHeader(String, Object)}
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue keyValue() {
@@ -67,7 +67,7 @@ public class HeadersExchangeConfig {
      * headers模式下根据匹配规则,如果headers中包含所有的key,且value相同,则路由到这个queue
      * {@link MessageBuilder#setHeader(String, Object)}
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue allKeyValue() {
@@ -80,7 +80,7 @@ public class HeadersExchangeConfig {
      * 当生产者分发消息时,使用{@link org.springframework.amqp.core.Message}作为载体,当message的headers中
      * 包含key,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingKey() {
@@ -93,11 +93,11 @@ public class HeadersExchangeConfig {
      * 当生产者分发消息时,使用{@link org.springframework.amqp.core.Message}作为载体,当message的headers中
      * 包含key且value相同,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingKeyValue() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(4);
         map.put("key", "value");
         map.put("key1", "value1");
         return BindingBuilder.bind(keyValue()).to(headersExchange()).whereAny(map).match();
@@ -109,11 +109,11 @@ public class HeadersExchangeConfig {
      * 当生产者分发消息时,使用{@link org.springframework.amqp.core.Message}作为载体,当message的headers中
      * 包含所有的key且value相同,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingAllKeyValue() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(4);
         map.put("key1", "value1");
         map.put("key2", "value2");
         return BindingBuilder.bind(allKeyValue()).to(headersExchange()).whereAll(map).match();

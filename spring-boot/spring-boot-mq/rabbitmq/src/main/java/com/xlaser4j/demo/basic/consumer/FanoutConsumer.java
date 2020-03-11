@@ -1,10 +1,10 @@
-package com.xlaser4j.demo.consumer;
+package com.xlaser4j.demo.basic.consumer;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @package: com.xlaser4j.demo.consumer
+ * @package: com.xlaser4j.demo.basic.consumer
  * @author: Elijah.D
  * @time: 2020/2/5 21:25
  * @description:
@@ -15,7 +15,7 @@ public class FanoutConsumer {
     /**
      * 订阅fanout-queueA
      *
-     * @param msg
+     * @param msg msg
      */
     @RabbitListener(queues = "fanout-queueA")
     public void fanoutA(String msg) {
@@ -25,7 +25,7 @@ public class FanoutConsumer {
     /**
      * 订阅fanout-queueB
      *
-     * @param msg
+     * @param msg msg
      */
     @RabbitListener(queues = "fanout-queueB")
     public void fanoutB(String msg) {

@@ -1,4 +1,4 @@
-package com.xlaser4j.demo.config;
+package com.xlaser4j.demo.basic.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @package: com.xlaser4j.demo.config
+ * @package: com.xlaser4j.demo.basic.config
  * @author: Elijah.D
  * @time: 2020/2/5 19:29
  * @description:
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("JavadocReference")
 @Configuration
 public class DirectExchangeConfig {
-    public final static String EXCHANGE_NAME = "direct";
+    public static final String EXCHANGE_NAME = "direct";
 
     /**
      * Construct a new Exchange, given a name, durability flag, auto-delete flag.
@@ -28,7 +28,7 @@ public class DirectExchangeConfig {
      * autoDelete true if the server should delete the exchange when it is no longer in use
      * {@link org.springframework.amqp.core.AbstractExchange#autoDelete}长时间未消费的消息,是否删除
      *
-     * @return
+     * @return exchange
      */
     @Bean
     DirectExchange directExchange() {
@@ -40,7 +40,7 @@ public class DirectExchangeConfig {
      * <p>
      * direct模式下,无需配置directExchange和binding,默认就会设置,这里只是为了演示四种配置而配置
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue queue() {
@@ -52,7 +52,7 @@ public class DirectExchangeConfig {
      * <p>
      * 当生产者分发消息时,需要指定一个routingKey,只要queue的name等于生产消息的key就可以接收到消息
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding binding() {

@@ -1,10 +1,10 @@
-package com.xlaser4j.demo.consumer;
+package com.xlaser4j.demo.basic.consumer;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @package: com.xlaser4j.demo.consumer
+ * @package: com.xlaser4j.demo.basic.consumer
  * @author: Elijah.D
  * @time: 2020/2/5 21:25
  * @description:
@@ -17,7 +17,7 @@ public class HeadersConsumer {
      * <p>
      * headers模式下需要{@link org.springframework.amqp.core.Message}对象传输,byte数组消费
      *
-     * @param msg
+     * @param msg msg
      */
     @RabbitListener(queues = "key")
     public void key(byte[] msg) {
@@ -29,7 +29,7 @@ public class HeadersConsumer {
      * <p>
      * headers模式下需要{@link org.springframework.amqp.core.Message}对象传输,byte数组消费
      *
-     * @param msg
+     * @param msg msg
      */
     @RabbitListener(queues = "keyValue")
     public void keyValue(byte[] msg) {
@@ -41,7 +41,7 @@ public class HeadersConsumer {
      * <p>
      * headers模式下需要{@link org.springframework.amqp.core.Message}对象传输,byte数组消费
      *
-     * @param msg
+     * @param msg msg
      */
     @RabbitListener(queues = "allKeyValue")
     public void allKeyValue(byte[] msg) {

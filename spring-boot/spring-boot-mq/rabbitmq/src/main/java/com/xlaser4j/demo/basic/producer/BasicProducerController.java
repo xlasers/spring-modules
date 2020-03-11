@@ -1,8 +1,8 @@
-package com.xlaser4j.demo.producer;
+package com.xlaser4j.demo.basic.producer;
 
-import com.xlaser4j.demo.config.FanoutExchangeConfig;
-import com.xlaser4j.demo.config.HeadersExchangeConfig;
-import com.xlaser4j.demo.config.TopicExchangeConfig;
+import com.xlaser4j.demo.basic.config.FanoutExchangeConfig;
+import com.xlaser4j.demo.basic.config.HeadersExchangeConfig;
+import com.xlaser4j.demo.basic.config.TopicExchangeConfig;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @package: com.xlaser4j.demo.producer
+ * @package: com.xlaser4j.demo.basic.producer
  * @author: Elijah.D
  * @time: 2020/2/5 21:58
  * @description:
  * @modified: Elijah.D
  */
 @RestController
-public class ProducerController {
+public class BasicProducerController {
     private final RabbitTemplate template;
 
-    public ProducerController(RabbitTemplate template) {
+    public BasicProducerController(RabbitTemplate template) {
         this.template = template;
     }
 

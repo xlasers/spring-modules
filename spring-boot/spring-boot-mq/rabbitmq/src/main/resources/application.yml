@@ -4,3 +4,10 @@ spring:
     username: guest
     password: guest
     port: 5672
+    listener:
+      type: simple
+      simple:
+        # 手动ack确认消息被消费(auto自动确认)
+        acknowledge-mode: manual
+        # 消息即使没有被ack,也不会被重新发送
+        default-requeue-rejected: false
