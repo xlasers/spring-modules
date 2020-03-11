@@ -1,4 +1,4 @@
-package com.xlaser4j.demo.config;
+package com.xlaser4j.demo.basic.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @package: com.xlaser4j.demo.config
+ * @package: com.xlaser4j.demo.basic.config
  * @author: Elijah.D
  * @time: 2020/2/5 19:29
  * @description:
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("JavadocReference")
 @Configuration
 public class TopicExchangeConfig {
-    public final static String EXCHANGE_NAME = "topic";
+    public static final String EXCHANGE_NAME = "topic";
 
     /**
      * Construct a new Exchange, given a name, durability flag, auto-delete flag.
@@ -28,7 +28,7 @@ public class TopicExchangeConfig {
      * autoDelete true if the server should delete the exchange when it is no longer in use
      * {@link org.springframework.amqp.core.AbstractExchange#autoDelete}长时间未消费的消息,是否删除
      *
-     * @return
+     * @return exchange
      */
     @Bean
     TopicExchange topicExchange() {
@@ -38,7 +38,7 @@ public class TopicExchangeConfig {
     /**
      * 创建一个queue: english
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue english() {
@@ -48,7 +48,7 @@ public class TopicExchangeConfig {
     /**
      * 创建一个queue: chinese
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue chinese() {
@@ -58,7 +58,7 @@ public class TopicExchangeConfig {
     /**
      * 创建一个queue: language
      *
-     * @return
+     * @return queue
      */
     @Bean
     Queue language() {
@@ -70,7 +70,7 @@ public class TopicExchangeConfig {
      * <p>
      * 当生产者分发消息时,当指定的routingKey以english结尾,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingEnglish() {
@@ -82,7 +82,7 @@ public class TopicExchangeConfig {
      * <p>
      * 当生产者分发消息时,当指定的routingKey以chinese结尾,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingChinese() {
@@ -94,7 +94,7 @@ public class TopicExchangeConfig {
      * <p>
      * 当生产者分发消息时,当指定的routingKey以language结尾,就会分发到这个queue中
      *
-     * @return
+     * @return binding
      */
     @Bean
     Binding bindingLanguage() {
