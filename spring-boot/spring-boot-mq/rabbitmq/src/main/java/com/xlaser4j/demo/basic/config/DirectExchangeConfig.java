@@ -48,14 +48,12 @@ public class DirectExchangeConfig {
     }
 
     /**
-     * 绑定queue到exchange上,指定一个routingKey(direct模式下这里key无用??)
-     * <p>
-     * 当生产者分发消息时,需要指定一个routingKey,只要queue的name等于生产消息的key就可以接收到消息
+     * 绑定queue到exchange上,指定一个routingKey
      *
      * @return binding
      */
     @Bean
     Binding binding() {
-        return BindingBuilder.bind(queue()).to(directExchange()).with("anyKey");
+        return BindingBuilder.bind(queue()).to(directExchange()).with("direct-key");
     }
 }
