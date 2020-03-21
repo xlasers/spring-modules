@@ -1,0 +1,12 @@
+server:
+  port: 8080
+# 服务名
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    # 自身不注册
+    register-with-eureka: false
+    # 自身不获取注册信息
+    fetch-registry: false

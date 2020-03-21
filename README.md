@@ -48,13 +48,15 @@
   
   
 ### WORKING LIST
-- spring-framework
-  - spring-mvc
+- spring-cloud
+  - eureka
+
 
 
 
 ### TODO LIST
-- spring-cloud
+- spring-framework
+  - spring-mvc
 
 
 

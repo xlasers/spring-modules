@@ -1,0 +1,19 @@
+server:
+  port: 8080
+# 服务名
+spring:
+  application:
+    name: eureka
+eureka:
+  # 修改本地host模拟集群环境: 127.0.0.1 eurekaB
+  instance:
+    hostname: eurekaA
+  client:
+    # eureka集群A-B:互相注册
+    register-with-eureka: true
+    # eureka集群A-B:互相发现
+    fetch-registry: true
+    # 注册到B
+    service-url:
+      defaultZone: http://eurekaB:8081/eureka
+
