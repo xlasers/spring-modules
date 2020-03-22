@@ -44,16 +44,23 @@
     - quartz | schedule
   - spring-boot-websocket
   - spring-boot-xml
+---
+- [spring-cloud-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
+  - eureka
+    - server | provider | consumer
+  - consul
+    - provider | consumer
   
   
   
 ### WORKING LIST
-- [spring-framework](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-framework)
+[spring-cloud-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
 
 
 
 ### TODO LIST
-- [spring-cloud](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
+- spring-framework
+  - spring-mvc
 
 
 
@@ -61,6 +68,3 @@
 * [JavaBoy](https://www.javaboy.org/)
 * [JueJin](https://juejin.im/book/5afc2e5f6fb9a07a9b362527)
 * [SpringBoot](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-documentation)
-
-         
-         

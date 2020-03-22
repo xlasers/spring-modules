@@ -44,13 +44,15 @@
     - quartz | schedule
   - spring-boot-websocket
   - spring-boot-xml
+---
+- [spring-cloud-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
+  - eureka
+    - server | provider | consumer
   
   
   
 ### WORKING LIST
-- spring-cloud
-  - eureka
-
+[spring-cloud-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
 
 
 

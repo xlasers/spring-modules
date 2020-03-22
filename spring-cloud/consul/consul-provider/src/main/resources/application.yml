@@ -1,0 +1,13 @@
+server:
+  port: 8087
+# 服务名
+spring:
+  application:
+    name: consul-provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: consul-provider
+
