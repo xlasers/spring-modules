@@ -10,3 +10,7 @@ eureka:
     register-with-eureka: false
     # 自身不获取注册信息
     fetch-registry: false
+    # eureka默认注册端口8671,这里修改成了8080,虽然false自身不注册,但控制台仍然有可能寻找默认端口,添加如下配置指明即可
+    # org.apache.http.conn.ConnectTimeoutException: Connect to localhost:8761 timed out
+    service-url:
+      defaultZone: http://localhost:8080/eureka

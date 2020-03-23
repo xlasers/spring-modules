@@ -11,6 +11,7 @@ import java.util.Random;
 import lombok.Cleanup;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,10 +32,13 @@ public class ConsumerController {
 
     private final RestTemplate restTemplateWithBalance;
 
-    public ConsumerController(DiscoveryClient discoveryClient, RestTemplate restTemplate, RestTemplate restTemplateWithBalance) {
+    private final LoadBalancerClient balancerClient;
+
+    public ConsumerController(DiscoveryClient discoveryClient, RestTemplate restTemplate, RestTemplate restTemplateWithBalance, LoadBalancerClient balancerClient) {
         this.discoveryClient = discoveryClient;
         this.restTemplate = restTemplate;
         this.restTemplateWithBalance = restTemplateWithBalance;
+        this.balancerClient = balancerClient;
     }
 
     /**
@@ -101,5 +105,16 @@ public class ConsumerController {
     @GetMapping("/c4")
     public String restTemplateWithBalance() {
         return restTemplateWithBalance.getForObject("http://eureka-provider/ep", String.class);
+    }
+
+    /**
+     * balancerClient负载均衡
+     *
+     * @return
+     */
+    @GetMapping("/c5")
+    public String loadBalancerClient() {
+        ServiceInstance instance = balancerClient.choose("eureka-provider");
+        return restTemplate.getForObject(instance.getUri() + "/ep", String.class);
     }
 }
