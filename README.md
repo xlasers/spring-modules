@@ -46,8 +46,14 @@
   - spring-boot-xml
 ---
 - [spring-cloud-demos](https://github.com/xlaser4j/spring-demo4j/tree/master/spring-cloud)
+  - consul
+    - provider | consumer
   - eureka
-    - server | provider | consumer
+    - provider | consumer | server
+  - hystrix
+    - provider | consumer
+  - openFeign
+    - provider | consumer | api
   
   
   

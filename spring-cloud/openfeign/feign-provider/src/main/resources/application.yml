@@ -1,0 +1,13 @@
+server:
+  port: 8085
+# 服务名
+spring:
+  application:
+    name: feign-provider
+  # 注册到consul: ./consul.exe agent -dev -ui -node=consul-dev -client=0.0.0.0
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: feign-provider

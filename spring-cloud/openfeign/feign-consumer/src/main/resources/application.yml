@@ -1,0 +1,39 @@
+server:
+  port: 8084
+# 服务名
+spring:
+  application:
+    name: feign-consumer
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: feign-consumer
+
+
+# feign的日志级别需要debug支持
+logging:
+  level:
+    com:
+      xlaser4j:
+        feign:
+          remote: debug
+
+feign:
+  # feign的数据压缩
+  compression:
+    response:
+      enabled: true
+    request:
+      enabled: true
+      # 压缩类型,默认如下
+      mime-types:
+        - text/xml
+        - application/xml
+        - application/json
+      # 压缩的最小限制
+      min-request-size: 2048
+  # feign的服务容错开启
+  hystrix:
+    enabled: true

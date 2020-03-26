@@ -15,6 +15,7 @@
         <module>consul</module>
         <module>eureka</module>
         <module>hystrix</module>
+        <module>openfeign</module>
     </modules>
 
     <properties>
