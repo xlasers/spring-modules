@@ -16,6 +16,7 @@
         <module>eureka</module>
         <module>hystrix</module>
         <module>openfeign</module>
+        <module>resilience4j</module>
     </modules>
 
     <properties>
