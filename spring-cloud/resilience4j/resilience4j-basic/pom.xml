@@ -25,6 +25,20 @@
             <artifactId>junit</artifactId>
             <version>4.13</version>
         </dependency>
+
+        <!-- resilience需要sl4j输出日志信息 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
