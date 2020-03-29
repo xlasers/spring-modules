@@ -64,12 +64,12 @@ public class BasicTest {
     public void testRateLimiter() {
         RateLimiterConfig config = RateLimiterConfig.custom()
                 .timeoutDuration(Duration.ofMillis(3000))
-                .limitRefreshPeriod(Duration.ofMillis(3000))
+                .limitRefreshPeriod(Duration.ofMillis(2000))
                 .limitForPeriod(3).build();
         RateLimiter limiter = RateLimiter.of("customLimiter", config);
 
         CheckedRunnable runnable = RateLimiter.decorateCheckedRunnable(limiter, () -> System.out.println(new Date()));
-        System.out.println("每3s限制请求三个: 查看控制台输出时间周期;同时limitRefreshPeriod(一个周期的时间) >= timeoutDuration(???)");
+        System.out.println("每3s限制请求三个: 查看控制台输出时间周期;");
         Try.run(runnable)
                 .andThenTry(runnable)
                 .andThenTry(runnable)

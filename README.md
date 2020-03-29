@@ -54,6 +54,8 @@
     - provider | consumer
   - openFeign
     - provider | consumer | api
+  - resilience4j
+    - provider | consumer | basic
   
   
   

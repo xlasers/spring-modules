@@ -1,0 +1,20 @@
+server:
+  port: 8090
+# 服务名
+spring:
+  application:
+    name: resilience4j-provider
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+# resilience4j配置
+resilience4j.ratelimiter:
+  instances:
+    backendA:
+      limitForPeriod: 3
+      # 必须小于timeout???
+      limitRefreshPeriod: 3s
+      timeoutDuration: 4s
