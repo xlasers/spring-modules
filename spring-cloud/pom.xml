@@ -17,6 +17,7 @@
         <module>hystrix</module>
         <module>openfeign</module>
         <module>resilience4j</module>
+        <module>zuul</module>
     </modules>
 
     <properties>

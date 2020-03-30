@@ -1,0 +1,22 @@
+server:
+  port: 8093
+# 服务名
+spring:
+  application:
+    name: zuul-proxy
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+# zuul配置
+zuul:
+  # 忽略注册中心的某个服务
+  ignored-services: eurake-provider
+  # 忽略路径
+  ignored-patterns: /**/ignore/**
+  routes:
+    # 请求路径为hello开始的路由到zuul-provider服务: /hello/test
+    zuul-provider: /hello/**
