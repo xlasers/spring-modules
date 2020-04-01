@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      # 配置转发策略: routes是数组,predicates是数组
+      routes:
+        - id: byYml
+          uri: http://httpbin.org
+          # Path大写(注意properties写法区别)
+          predicates:
+            - Path=/anything

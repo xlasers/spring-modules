@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    # 开启自动代理
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+# gateway开启日志
+logging:
+  level:
+    org.springframwork.gateway: debug
