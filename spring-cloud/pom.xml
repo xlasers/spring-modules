@@ -12,6 +12,7 @@
     <artifactId>spring-cloud</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>config</module>
         <module>consul</module>
         <module>eureka</module>
         <module>gateway</module>
