@@ -8,3 +8,27 @@ spring:
           # Path大写(注意properties写法区别)
           predicates:
             - Path=/anything
+        # 在4.15-5.15之间才会转发这个请求,否则404(还有After,Before两个可以使用,只需要写一个时间即可)
+        - id: between
+          uri: http://httpbin.org
+          predicates:
+            - Between=2020-04-01T01:01:01+08:00[Asia/Shanghai],2020-05-15T01:01:01+08:00[Asia/Shanghai]
+            - Path=/headers
+        # postman请求post方法/ip,报错Method Not Allow,表示转发成功但是httpbin没有post请求的/ip路径方法,
+        # 如果访问直接get请求,因为不会转发到httpbin,所以请求404(设置method=get则正常转发,返回结果)
+        - id: Method
+          uri: http://httpbin.org
+          predicates:
+            - Method=POST
+            - Path=/ip
+        # 根据路径匹配/image开始的请求转发: /image/jpeg,/image/png,/image/svg
+        - id: Path
+          uri: http://httpbin.org
+          predicates:
+            - Path=/image/{segment}
+        # 根据参数情况匹配,如当包含参数name,且value以elijah开头才进行转发,kv以逗号隔开(也可以只指定参数的key)
+        - id: Query
+          uri: http://httpbin.org
+          predicates:
+            - Query=name,elijah.*
+            - Path=/get

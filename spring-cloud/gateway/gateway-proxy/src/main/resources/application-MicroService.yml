@@ -1,10 +1,19 @@
 spring:
   cloud:
-    # 开启自动代理
+    # 开启自动代理,通过服务名+路径转发
     gateway:
       discovery:
         locator:
           enabled: true
+      # 配置转发策略: routes是数组,predicates是数组;设置过滤器filter自动添加参数name=value
+      routes:
+        - id: byURI
+          # lb: loadBalance
+          uri: lb://gateway-provider
+          predicates:
+            - Path=/filter
+          filters:
+            - AddRequestParameter=name,testFilter
 # gateway开启日志
 logging:
   level:

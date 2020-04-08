@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: feign-provider
-  # 注册到consul: ./consul.exe agent -dev -ui -node=consul-dev -client=0.0.0.0
+  # 注册到consul: `./consul.exe agent -dev -ui -node=consul-dev -client=0.0.0.0`
   cloud:
     consul:
       host: localhost
