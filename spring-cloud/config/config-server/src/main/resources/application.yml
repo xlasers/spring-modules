@@ -1,5 +1,17 @@
 server:
   port: 8096
 spring:
+  profiles:
+    active: test
   application:
     name: config-server
+  # config配置
+  cloud:
+    config:
+      server:
+        git:
+          # 远程配置git仓库地址
+          uri: https://github.com/xlaser4j/spring-demo4j.git
+          # 私有仓库认证信息配置,公有仓库不需要
+          username: xx
+          password: xx

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # 配置文件路径,这里写成固定做测试
+          search-paths: spring-cloud/config/config-repo/basic
