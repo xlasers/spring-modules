@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # 配置文件动态路径{application}占位符,当有client连接到server中时,会自动替换成client的spring.application.name值
+          search-paths: spring-cloud/config/config-repo/{application}

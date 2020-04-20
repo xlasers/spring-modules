@@ -1,0 +1,4 @@
+server:
+  port: 8097
+# 测试读取config
+config-client-test: value for dev-config-client

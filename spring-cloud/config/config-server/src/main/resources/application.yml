@@ -2,7 +2,7 @@ server:
   port: 8096
 spring:
   profiles:
-    active: test
+    active: ms
   application:
     name: config-server
   # config配置

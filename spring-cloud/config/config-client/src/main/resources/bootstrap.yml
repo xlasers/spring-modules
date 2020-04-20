@@ -1,0 +1,13 @@
+spring:
+  # server参数配置: /{application}/{profile}/[{label}]
+  application:
+    # 对应server中的application
+    name: config-client
+  cloud:
+    config:
+      # 对应server中的分支名
+      label: master
+      # 对应server中的label
+      profile: dev
+      # server地址,默认端口8888
+      uri: http://localhost:8096

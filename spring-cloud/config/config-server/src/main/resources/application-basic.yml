@@ -3,5 +3,5 @@ spring:
     config:
       server:
         git:
-          # 配置文件路径,这里写成固定做测试
+          # 配置文件路径,这里写成固定的basic,测试server通过接口暴露配置信息;
           search-paths: spring-cloud/config/config-repo/basic
