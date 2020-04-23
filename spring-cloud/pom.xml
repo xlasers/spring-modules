@@ -27,7 +27,7 @@
         <!-- 注意cloud版本对应的boot版本:https://spring.io/projects/spring-cloud -->
         <!--Hoxton-2.2.x | Greenwich-2.1.x | Finchley-2.0.x | Edgware-1.5.x | Dalston-1.5.x-->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <resilience4j.version>1.1.0</resilience4j.version>
+        <resilience4j.version>1.4.0</resilience4j.version>
     </properties>
 
     <dependencyManagement>
