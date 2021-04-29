@@ -1,0 +1,39 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cn.hutool:hutool-all
+    versions:
+    - 5.5.7
+    - 5.5.8
+    - 5.5.9
+    - 5.6.0
+    - 5.6.1
+    - 5.6.2
+    - 5.6.3
+  - dependency-name: org.springframework.boot:spring-boot-starter-parent
+    versions:
+    - 2.4.2
+    - 2.4.3
+    - 2.4.4
+  - dependency-name: org.eclipse.jetty:jetty-maven-plugin
+    versions:
+    - 11.0.0
+    - 11.0.1
+  - dependency-name: de.codecentric:spring-boot-admin-dependencies
+    versions:
+    - 2.3.1
+    - 2.4.0
+  - dependency-name: org.projectlombok:lombok
+    versions:
+    - 1.18.18
+  - dependency-name: com.alibaba:fastjson
+    versions:
+    - 1.2.75
+  - dependency-name: org.webjars:stomp-websocket
+    versions:
+    - 2.3.3-1
