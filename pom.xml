@@ -14,7 +14,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <!--由于cloud模块需要升级为2.2.x,如果对boot模块造成影响,请降低2.1.6测试运行boot模块-->
         <!--Hoxton-2.2.x | Greenwich-2.1.x | Finchley-2.0.x | Edgware-1.5.x | Dalston-1.5.x |-->
-        <version>2.2.5.RELEASE</version>
+        <version>2.5.0</version>
     </parent>
 
     <modules>
