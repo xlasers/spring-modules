@@ -40,7 +40,7 @@
         <stomp-websocket.version>2.3.3</stomp-websocket.version>
         <lombok.version>1.18.0</lombok.version>
         <slf4j.version>1.7.21</slf4j.version>
-        <logback.version>1.1.7</logback.version>
+        <logback.version>1.2.4</logback.version>
     </properties>
 
     <dependencyManagement>
